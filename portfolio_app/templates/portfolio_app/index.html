@@ -1,9 +1,10 @@
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>triefauzan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -11,39 +12,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
     <!-- HOME  -->
     <Section id="home">
-            <!-- Navigation Bar -->
-            <nav class="navbar">
-                <div class="max-width">
-                    <!--Logo-->
-                    <div class="logo">
-                        <a href="#home"><img src="images/logo.png" alt="" width="203" height="77"></a>
-                    </div>
-                    <!--End of Logo-->
-                    <!--Text-->
-                    <div class="menu">
-                        <ul>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#projects">PROJECTS</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                        </ul>
-                    </div>
-                    <!--End of Text-->
-                    <div class="menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
-            </nav>
-            <!-- End of Navigation Bar -->
-
+            {% include 'portfolio_app/navbar.html' %}
             <!-- Content -->
             <div class="home-content">
                 <div class="home-img">
-                    <img src="images/photo.jpg" alt="" width="400" height="400">
+                    <img src="{% static 'images/photo.jpg' %}" alt="" width="400" height="400">
                 </div>
                 <div class="home-text">
                     <p>
@@ -57,7 +35,7 @@
             <!-- End of Content -->
             <!-- Scroll Icon -->
             <div class="scroll-icon">
-                <a href="#about"><img src="images/scroll-down.png" alt=""></a>
+                <a href="#about"><img src="{% static 'images/scroll-down.png' %}" alt=""></a>
             </div>
             <!-- End of Scroll Icon -->
     </Section>
@@ -100,8 +78,8 @@
                 <!-- End of Look What I can do -->
                 <!-- Download resume -->
                 <div class="resume-container">
-                    <img src="images/scroll-down.png" alt=""><br>
-                    <a href="#" class="resume">Download Resume</a>
+                    <img src="{% static 'images/scroll-down.png' %}" alt=""><br>
+                    <a target="_blank" href="{% static 'resume.pdf' %}" class="resume">Download Resume</a>
                 </div>
                 <!-- End of Download resume -->
             </div>
@@ -117,7 +95,7 @@
                     <div class="carousel owl-carousel">
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -133,7 +111,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -149,7 +127,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -165,7 +143,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -181,7 +159,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -197,7 +175,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -213,7 +191,7 @@
                         </div>
                         <div class="card card-1">
                             <div class="cardimg">
-                                <img src="images/default.jpg" alt="" width="100%" height="100%">
+                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
                             </div>
                             <div class="cardtxt">
                                 <p>
@@ -249,26 +227,7 @@
           </div>
     </section>
     <!-- End of CONTACT -->
-    <footer class="footer">
-        <div class="max-width">
-            <!--copyright-->
-            <div class="copyright">
-                <a href="#home">triefauzan©2021</a>
-            </div>
-            <!--End of copyright-->
-            <!--social-->
-            <div class="social">
-                <ul>
-                    <li><a href="#about"><img src="images/github.png" alt="" width="
-                        75px" height="60px"></a></li>
-                    <li><a href="#projects"><img src="images/linkedin.png" alt="" width="
-                        80px" height="55px"></a></li>
-                    <li><a href="#contact"><img src="images/google.png" alt="" width="
-                        75px" height="55px"></a></li>
-                </ul>
-            </div>
-            <!--End of social-->
-        </div>
-    </footer>
+    
+    {% include 'portfolio_app/footer.html' %}
 </body>
 </html>

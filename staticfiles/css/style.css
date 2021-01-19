@@ -1,0 +1,789 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+    font-family: 'Open Sans';
+    margin: 0;
+}
+
+p, li, span, label, input, textarea{
+    font-family: 'Open Sans';
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+section{
+    height: 100%;
+    padding-top: 100px;
+}
+
+h1 { font-size: 56px;}
+h2 { font-size: 36px;}
+h3 { font-size: 28px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 16px;}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/* HOME */
+/*NAVBAR*/
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Open Sans';
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 10px 0;
+    background: crimson;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+.menu-btn{
+    color: #000;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/*End of NAVBAR*/
+
+/*CONTENT*/
+.home-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+            'img texts'
+    ;
+    justify-content: center;
+    height: 76%;
+}
+
+.home-img{
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
+    padding: 8px;
+}
+
+.home-img img{
+    border-radius: 50%;
+}
+
+.home-text{
+    grid-area: texts;
+    padding: 8px;
+    justify-self: center;
+    align-self: center;
+}
+
+.home-text p{
+    font-family: 'Fredoka One';
+    font-size: 54px;
+}
+
+.home-text span{
+    font-family: 'Fredoka One';
+    color: red;
+}
+
+.home-text small{
+    font-family: 'Fredoka One';
+    font-size: 20px;
+}
+/*End of CONTENT*/
+/* Scroll Icon */
+.scroll-icon{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+}
+/* End of Scroll Icon */
+
+/* End of HOME */
+
+/* ABOUT */
+
+/* about me*/
+.about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+            'about resume'
+            'skill resume'
+    ;
+}
+
+.about-me{
+    grid-area: about;
+    grid-template-columns: fit-content(100%);
+    justify-content: center;
+}
+
+.about-me h2{
+    text-align: center;
+    margin: 0;
+}
+
+.about-me p{
+    justify-self: center;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+/* End of about me*/
+
+/* skill*/
+.skills{
+    grid-area: skill;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+            'look look'
+            'leftcolumn rightcolumn'
+    ;
+    justify-content: center;
+    align-content: center;
+}
+
+.skills-header{
+    grid-area: look;
+    justify-self: center;
+}
+
+.skills-header h1{
+    margin: 0;
+}
+
+.skills-leftcolumn{
+    grid-area: leftcolumn;
+    justify-self: end;
+}
+
+.skills-leftcolumn li{
+    padding: 10px;
+}
+
+.skills-rightcolumn{
+    grid-area: rightcolumn;
+    justify-self: start;
+}
+
+.skills-rightcolumn li{
+    padding: 10px;
+}
+/* End of skill*/
+
+/* resume*/
+.resume-container{
+    grid-area: resume;
+    justify-self: center;
+    align-self: center;
+}
+
+.resume-container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.resume{
+	box-shadow: 3px 3px 0px 0px #899599;
+	background:crimson;
+	background-color: crimson;
+	border-radius:15px;
+	border:1px solid crimson;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+
+.resume:hover {
+	background: #ffffff;;
+    background-color:transparent;
+    color:crimson;
+}
+
+.resume:active {
+	position:relative;
+	top:1px;
+}
+/* End of resume*/
+
+/* End of ABOUT */
+
+/* PROJECTS */
+.content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .content .images{
+    height: 100%;
+    width: 100%;
+  }
+
+.wrapper{
+    width: 100%;
+  }
+
+.carousel{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+  
+.carousel .card{
+    height: 450px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+  
+.carousel .card-1{
+    background: rgba( 255, 255, 255, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 30% 20%;
+    grid-template-areas: 
+            'image image'
+            'text text'
+            'code detail'
+    ;
+}
+
+.carousel .cardimg{
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}
+
+.carousel .cardimg img{
+    border-radius: 5%;
+}
+
+.carousel .cardtxt{
+    grid-area: text;
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+}
+
+.carousel .cardcodebutton{
+    grid-area: code;
+    justify-self: center;
+    align-self: center;
+}
+
+.carousel .button{
+	box-shadow: 3px 4px 0px 0px #899599;
+	background-color:crimson;
+	border-radius:15px;
+	border:1px solid crimson;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-family: "Open Sans";
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.carousel .button:hover {
+    background-color:transparent;
+    color:crimson;
+    
+}
+.carousel .button:active {
+	position:relative;
+	top:1px;
+}
+
+.carousel .carddetailbutton{
+    grid-area: detail;
+    justify-self: center;
+    align-self: center;
+}
+  
+.owl-dots{
+    text-align: center;
+    margin-top: 10px;
+}
+  
+.owl-dot{
+    height: 15px;
+    width: 45px;
+    margin: 0 5px;
+    outline: none;
+    border-radius: 14px;
+    border: 2px solid crimson!important;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+  
+.owl-dot.active,
+.owl-dot:hover{
+    background: crimson!important;
+}
+/* End of PROJECTS */
+
+/* CONTACT */
+.contact-section h1{
+    text-align: center;
+    color: #000;
+}
+
+.contact-section h5{
+    text-align: center;
+    color: #000;
+}
+    
+.contact-form{
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+} 
+  
+.contact-form-text{
+    display: block;
+    font-family: 'Open Sans';
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 1px solid crimson;
+    background: #fff;
+    padding: 20px 40px;
+    outline: none;
+    color: #000;
+    transition: 0.5s;
+}
+  
+.contact-form-text:focus{
+    box-shadow: 0 0 10px 4px crimson;
+}
+
+textarea.contact-form-text{
+    resize: none;
+    height: 120px;
+}
+  
+.contact-form-btn{
+    float: right;
+    border: 0;
+    background: #fff;
+    border:1px solid crimson;
+    color: crimson;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+  
+.contact-form-btn:hover{
+    background-color:crimson;
+    color:#fff;
+}
+  
+/* End of CONTACT */
+
+/*Footer*/
+.footer{
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: crimson;
+    padding: 0;
+    font-family: 'Open Sans';
+    transition: all 0.3s ease;
+}
+
+.copyright a:hover{
+    color: #fff;
+}
+
+.footer .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .social li{
+    list-style: none;
+    display: inline-block;
+}
+.footer .social li a{
+    display: block;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+/*End of Footer*/
+
+/* responsive media query start */
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    /*CONTENT*/
+    .home-content{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+                'img texts'
+        ;
+        justify-content: center;
+        align-content: center;
+        height: 76%;
+    }
+
+    .home-img{
+        grid-area: img;
+        justify-self: center;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .home-img img{
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+    }
+
+    .home-text{
+        grid-area: texts;
+        padding: 8px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .home-text p{
+        font-family: 'Fredoka One';
+        font-size: 54px;
+    }
+
+    .home-text span{
+        font-family: 'Fredoka One';
+        color: red;
+    }
+
+    .home-text small{
+        font-family: 'Fredoka One';
+        font-size: 20px;
+    }
+    /*End of CONTENT*/
+    /* Scroll Icon */
+    .scroll-icon{
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+    }
+    /* End of Scroll Icon */
+    /*End of home*/
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 798px) {
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    /*Home*/
+    .home-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+                'img' 
+                'texts'
+        ;
+        justify-content: center;
+    }
+    
+    .home-img img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .home-text p{
+        font-size: 45px;
+    }
+    
+    .home-text small{
+        font-size: 10px;
+    }
+    /*End of Home*/
+    .about-me h2{
+        font-size: 30px;
+    }
+    
+    .about-me p{
+        font-size: 14px;
+    }
+    /* skill*/
+    .skills{
+        padding-top: 10px;
+    }
+    .skills-header h2{
+        font-size: 30px;
+    }
+    
+    .skills-leftcolumn li{
+        padding: 3px;
+    }
+    
+    .skills-rightcolumn li{
+        padding: 3px;
+    }
+    /* End of skill*/ 
+    /* PROJECTS */
+    .carousel .card{
+        height: 400px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .carousel .card-1{
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    .carousel .cardtxt{
+        font-size: 12px;
+    }
+
+    .carousel .button{
+        padding:5px 12px;
+    }
+    /* End of PROJECTS */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    /*Home*/
+    .home-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+                'img' 
+                'texts'
+        ;
+        justify-content: center;
+    }
+    
+    .home-img img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .home-text p{
+        font-size: 45px;
+    }
+    
+    .home-text small{
+        font-size: 10px;
+    }
+    /*End of Home*/
+    /*about*/
+    .about{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 40% 20%;
+        grid-template-areas: 
+                'about'
+                'skill' 
+                'resume'
+        ;
+    }
+
+    .about-me h2{
+        font-size: 30px;
+    }
+    
+    .about-me p{
+        font-size: 14px;
+    }
+    /* End of about me*/
+    
+    /* skill*/
+    .skills{
+        padding-top: 10px;
+    }
+    .skills-header h2{
+        font-size: 30px;
+    }
+    
+    .skills-leftcolumn li{
+        padding: 3px;
+    }
+    
+    .skills-rightcolumn li{
+        padding: 3px;
+    }
+
+    .resume-container img{
+        display: none;
+    }
+    /* End of skill*/    
+    /*end of about*/
+    /* PROJECTS */
+    .carousel .card{
+        height: 400px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .carousel .card-1{
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    .carousel .cardtxt{
+        font-size: 12px;
+    }
+
+    .carousel .button{
+        padding:5px 12px;
+    }
+    /* End of PROJECTS */
+    
+    /*footer*/
+    .footer .social li a img{
+        width: 50px;
+        height: 40px;
+    }
+    /*End of footer*/
+}
+
+
