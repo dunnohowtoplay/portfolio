@@ -93,118 +93,27 @@
             <div class="images">
                 <div class="wrapper">
                     <div class="carousel owl-carousel">
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
+                        {% for post in posts %}
+                            <div class="card card-1">  
+                                <div class="cardimg">
+                                    <img src="{{post.thumbnail.url}}" alt="" width="100%" height="100%">
+                                </div>
+                                <div class="cardtxt">
+                                    <h6>{{post.headline}}</h6>
+                                    <p>{{post.sub_headline}}</p>
+                                    <hr>
+                                    {% for tag in post.tags.all %}
+                                        <span class="tag">{{tag}}</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="cardcodebutton">
+                                    <a href="#" class="button">CODE</a>
+                                </div>
+                                <div class="carddetailbutton">
+                                    <a href="#" class="button">DETAIL</a>
+                                </div>
                             </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt sunt officia odio deserunt labore nam maxime delectus earum ad consectetur? Modi porro animi exercitationem, praesentium amet debitis labore quis doloremque.
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
-                        <div class="card card-1">
-                            <div class="cardimg">
-                                <img src="{% static 'images/default.jpg' %}" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="cardtxt">
-                                <p>
-                                    Lorem ipsum
-                                </p>
-                            </div>
-                            <div class="cardcodebutton">
-                                <a href="#" class="button">CODE</a>
-                            </div>
-                            <div class="carddetailbutton">
-                                <a href="#" class="button">DETAIL</a>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
