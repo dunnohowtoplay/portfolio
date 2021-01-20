@@ -284,7 +284,7 @@ h6 { font-size: 16px;}
     width: 100%;
     position: relative;
   }
-  .content .images{
+.content .image{
     height: 100%;
     width: 100%;
   }
@@ -300,7 +300,7 @@ h6 { font-size: 16px;}
 }
   
 .carousel .card{
-    height: 450px;
+    height: 470px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
@@ -312,34 +312,48 @@ h6 { font-size: 16px;}
     backdrop-filter: blur( 10.5px );
     -webkit-backdrop-filter: blur( 10.5px );
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50% 30% 20%;
-    grid-template-areas: 
-            'image image'
-            'text text'
-            'code detail'
-    ;
+
 }
 
-.carousel .cardimg{
-    grid-area: image;
+.carousel .card-1 hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.carousel .card-1 p{
+    margin: 0;
+}
+
+.carousel .card-1 a{
+    color: #17a2b8;
+}
+.carousel .images{
+    display: block;
     width: 100%;
-    height: 100%;
-    border-radius: 10%;
-}
-
-.carousel .cardimg img{
+    height: 200px;
+    object-fit: fill;
     border-radius: 5%;
 }
 
-.carousel .cardtxt{
-    grid-area: text;
-    padding-right: 10%;
-    padding-left: 10%;
+.carousel .post-content{
+    background-color: #fff;
+    padding: 15px;
 }
 
-.carousel .tag{
+.carousel .post-title {
+    color: black;
+    margin: 0;
+}
+
+.carousel .post-intro{
+    color: #4b5156;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.carousel .tag {
     display: inline-block;
     color: #fff;
     background-color: #888;
@@ -347,42 +361,6 @@ h6 { font-size: 16px;}
     margin: 2px;
     padding: 2px 5px;
     font-size: 12px;
-}
-
-.carousel .cardcodebutton{
-    grid-area: code;
-    justify-self: center;
-    align-self: center;
-}
-
-.carousel .button{
-	box-shadow: 3px 4px 0px 0px #899599;
-	background-color:crimson;
-	border-radius:15px;
-	border:1px solid crimson;
-	display:inline-block;
-	cursor:pointer;
-	color:#fff;
-	font-family: "Open Sans";
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-.carousel .button:hover {
-    background-color:transparent;
-    color:crimson;
-    
-}
-.carousel .button:active {
-	position:relative;
-	top:1px;
-}
-
-.carousel .carddetailbutton{
-    grid-area: detail;
-    justify-self: center;
-    align-self: center;
 }
   
 .owl-dots{
@@ -652,18 +630,6 @@ textarea.contact-form-text{
         margin-left: auto;
         margin-right: auto;
     }
-    
-    .carousel .card-1{
-        grid-template-rows: 40% 40% 20%;
-    }
-
-    .carousel .cardtxt{
-        font-size: 12px;
-    }
-
-    .carousel .button{
-        padding:5px 12px;
-    }
     /* End of PROJECTS */
 }
 
@@ -772,27 +738,6 @@ textarea.contact-form-text{
         width: 90%;
         margin-left: auto;
         margin-right: auto;
-    }
-    
-    .carousel .card-1{
-        grid-template-rows: 40% 40% 20%;
-    }
-
-    .carousel .cardtxt{
-        font-size: 12px;
-    }
-
-    .carousel .button{
-        padding:5px 12px;
-    }
-    /* End of PROJECTS */
-    
-    /*footer*/
-    .footer .social li a img{
-        width: 50px;
-        height: 40px;
-    }
     /*End of footer*/
+    }
 }
-
-
