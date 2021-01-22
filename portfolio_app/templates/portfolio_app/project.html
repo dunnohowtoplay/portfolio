@@ -1,0 +1,51 @@
+{% extends 'portfolio_app/main.html' %}
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+	img{
+		max-width: 100%;
+		object-fit: cover;
+	}
+
+	.featured_image{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.post-container{
+			width: 900px;
+			margin: 0 auto;
+			padding-top: 20px;
+			padding-bottom: 20px;
+	}
+
+	@media screen and (max-width: 900px){
+		.post-container{
+			width: 95%;
+		}
+	}
+</style>
+
+<div class="post-container">
+	<p align="center"><img src="{% static 	'images/logo.png'%}" alt="" width="300px" height="100px"></p>
+	<a class="btn btn-sm btn-primary" href="{% url 'home' %}">&laquo Back to Home Page</a>
+	{% if request.user.is_staff %}
+		 <a class="btn btn-sm btn-primary" href="{% url 'updateProject' post.slug %}">Edit</a>
+		 <a class="btn btn-sm btn-danger" href="{% url 'deleteProject' post.slug %}">Delete</a>
+	{% endif %}
+	<br>
+	<img class="featured_image" src="{{post.thumbnail.url}}">
+	<br>
+	{% for tag in post.tags.all %}
+		<span class="tag">{{tag}}</span>
+	{% endfor %}
+	<hr>
+
+	<h1>{{post.headline}}</h1>
+	<h4>{{post.sub_headline}}</h4>
+	<br>
+
+	<p>{{post.body|safe}}</p>
+</div>
+{% endblock content %}
