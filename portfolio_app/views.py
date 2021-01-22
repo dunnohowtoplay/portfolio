@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, login, authenticate
+from .decorators import *
 
 from .models import *
 from .forms import *
@@ -21,6 +25,8 @@ def project(request, slug):
     return render(request, 'portfolio_app/project.html', context)
 
 #crud
+@admin_only
+@login_required(login_url="home")
 def addProject(request):
 	form = addProjectForm()
 
@@ -33,6 +39,8 @@ def addProject(request):
 	context = {'form':form}
 	return render(request, 'portfolio_app/add_project.html', context)
 
+@admin_only
+@login_required(login_url="home")
 def updateProject(request, slug):
     post = Post.objects.get(slug=slug)
     form = addProjectForm(instance=post)
@@ -46,7 +54,8 @@ def updateProject(request, slug):
     context = {'form':form}
     return render(request, 'portfolio_app/add_project.html', context)
 
-
+@admin_only
+@login_required(login_url="home")
 def deleteProject(request, slug):
     post = Post.objects.get(slug=slug)
 

@@ -1,137 +1,89 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>triefauzan</title>
+    <title>triefauzan | Junior Software Developer</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- HOME  -->
-    <Section id="home">
-            {% include 'portfolio_app/navbar.html' %}
-            <!-- Content -->
-            <div class="home-content">
-                <div class="home-img">
-                    <img src="{% static 'images/photo.jpg' %}" alt="" width="400" height="400">
+    <div class="main-container">
+        <div class="box1">
+            <img class="photo" src="{% static 'images/photo.jpg' %}" alt="">
+            <div class="hdr-content">
+                <div class="user">
+                    <img class="icon" src="{% static 'images/user.png' %}" alt="">
+                    <h2>Trie Fauzan Febriyansyah</h2>
+                    <p>Junior Software Developer</p>
                 </div>
-                <div class="home-text">
-                    <p>
-                        Hello,
-                        <br>I'm <span>triefauzan</span>
-                        <br>Software Developer
-                        <br><small>based in Indonesia</small>
-                    </p>
+                <hr>
+                <div class="home">
+                    <img class="icon" src="{% static 'images/home.png' %}" alt="">
+                    <h3>Kuningan, West Java, Indonesia</h3>
                 </div>
-            </div>
-            <!-- End of Content -->
-            <!-- Scroll Icon -->
-            <div class="scroll-icon">
-                <a href="#about"><img src="{% static 'images/scroll-down.png' %}" alt=""></a>
-            </div>
-            <!-- End of Scroll Icon -->
-    </Section>
-    <!-- End of HOME -->
-
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="main-container">
-            <div class="about">
-                <!-- About Me -->
-                <div class="about-me">
-                    <h2>About me</h2>
-                    <p>Software developer focus on Python for scripting, Web Developer using Django framework with MySQL database for backend and use Bootstrap for frontend. I can code in Javascript but my main focus is with Python. Currently learning anything about software developer targeting for junior software developer position.</p>
-
-                </div>
-                <!-- End of About Me -->
-                <!-- Look What I can do -->
-                <div class="skills">
-                    <div class="skills-header">
-                        <h2>Skills</h2>
-                    </div>
-                    <div class="skills-leftcolumn">
-                        <ul>
-                            <li>Python</li>
-                            <li>Javascript</li>
-                            <li>MySQL</li>
-                            <li>Web Development</li>
-                            <li>Bootstrap</li>
-                        </ul>
-                    </div>
-                    <div class="skills-rightcolumn">
-                        <ul>
-                            <li>Django</li>
-                            <li>HTML/CSS</li>
-                            <li>API</li>
-                            <li>Git</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End of Look What I can do -->
-                <!-- Download resume -->
-                <div class="resume-container">
-                    <img src="{% static 'images/scroll-down.png' %}" alt=""><br>
-                    <a target="_blank" href="{% static 'resume.pdf' %}" class="resume">Download Resume</a>
-                </div>
-                <!-- End of Download resume -->
-            </div>
-        </div>
-    </section>
-    <!-- End of ABOUT -->
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="content">
-            <div class="image">
-                <div class="wrapper">
-                    <div class="carousel owl-carousel">
-                        {% for post in posts %}
-                            <div class="card card-1">
-                                <img class="images" src="{{post.thumbnail.url}}" alt="">
-                                <div class="post-content">
-                                    <h2 class="post-title">{{post.headline}}</h2>
-                                    <p class="post-intro">{{post.sub_headline}}</p>
-                                    <hr>
-                                    {% for tag in post.tags.all %}
-                                        <span class="tag">{{tag}}</span>
-                                    {% endfor %}
-                                    <hr>
-                                    <p align="center"><a href="{% url 'project' post.slug %}">View detail</a></p>
-                                </div>  
-                            </div>
-                        {% endfor %}
-                    </div>
+                <hr>
+                <div class="home">
+                    <img class="icon" src="{% static 'images/email.png' %}" alt="">
+                    <h3>ftriefauzan@gmail.com</h3>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End of PROJECTS -->
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="contact-section">
-            <h1>Contact Me</h1>
-            <h5>I’ll be glad to work with you</h5>
-            <form class="contact-form" method="POST" action="{% url 'send_email' %}">
-                {% csrf_token %}
-                <input type="text" class="contact-form-text" placeholder="Name" name="name">
-                <input type="email" class="contact-form-text" placeholder="Email" name="email">
-                <input type="text" class="contact-form-text" placeholder="Subject" name="subject">
-                <textarea class="contact-form-text" placeholder="Message" name="message"></textarea>
-                <input type="submit" class="contact-form-btn" value="Send">
-            </form>
-          </div>
-    </section>
-    <!-- End of CONTACT -->
-    
-    {% include 'portfolio_app/footer.html' %}
+        <div class="box2">
+            <p>Software developer focus on Python for scripting, Web Developer using Django framework with MySQL database for backend and use Bootstrap for frontend. I can code in Javascript but my main focus is with Python. Currently learning anything about software developer targeting for junior software developer position.</p>
+        </div>
+        <div class="box3">
+            <div class="expertise">
+                <span class="tag">Python</span>
+                <span class="tag">Javascript</span>
+                <span class="tag">Sql</span>
+                <span class="tag">Django</span>
+                <span class="tag">Git</span>
+                <span class="tag">API</span>
+            </div>
+            <div class="resume">
+                <p><a href="{% static 'resume.pdf' %}">Download resume</a> or visit my <a target="_blank" href="https://www.linkedin.com/in/triefauzan/">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="box4">
+            <div class="project">
+                {% for post in posts %}
+                    <div class="card">
+                        <img class="images" src="{{post.thumbnail.url}}" alt="">
+                        <div class="content">
+                            <h2 class="post-title">{{post.headline}}</h2>
+                            <p class="post-intro">{{post.sub_headline}}</p>
+                            <hr>
+                            <p align="center"><a href="{% url 'project' post.slug %}">View detail</a></p>
+                            <hr>
+                            {% for tag in post.tags.all %}
+                                <span class="tag">{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if request.user.is_staff %}
+                <p align="center"><a href="{% url 'addProject' %}">Add Project</a></p>
+            {% endif %}
+        </div>
+        <div class="box5">
+            <div class="contact-section">
+                <h1>Contact Me</h1>
+                <h5>I’ll be glad to work with you</h5>
+                <form class="contact-form" method="POST" action="{% url 'send_email' %}">
+                    {% csrf_token %}
+                    <input required type="text" class="contact-form-text" placeholder="Name" name="name">
+                    <input required type="email" class="contact-form-text" placeholder="Email" name="email">
+                    <input required type="text" class="contact-form-text" placeholder="Subject" name="subject">
+                    <textarea required class="contact-form-text" placeholder="Message" name="message"></textarea>
+                    <input type="submit" class="contact-form-btn" value="Send">
+                </form>
+              </div>
+        </div>
+    </div>
 </body>
 </html>

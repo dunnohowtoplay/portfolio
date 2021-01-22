@@ -1,5 +1,5 @@
 {% extends 'portfolio_app/main.html' %}
-
+{% load static %}
 {% block content %}
 
 <style type="text/css">
@@ -32,6 +32,7 @@
 
 <div id="page-wrapper">
 	<div id="success-box" class="content-block">
+		<p><img src="{% static 	'images/logo.png'%}" alt="" width="300px" height="100px"></p>
 		<h1>Thanks for reaching out!</h1>
 		<p>Your message was successfully sent. I will do my best to get back to you in a timely manner :)</p>
 		<a id="back-btn" class="btn btn-success" href="{% url 'home' %}">BACK TO HOME PAGE</a>
