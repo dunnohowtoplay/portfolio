@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dotenv
 import django_heroku
+import dj_database_url
 
 
 
@@ -162,3 +163,19 @@ EMAIL_HOST_PASSWORD = os.environ['YOU_EMAIL_PASSWORD']
 
 #Heroku Settings
 django_heroku.settings(locals())
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
