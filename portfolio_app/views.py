@@ -79,7 +79,7 @@ def sendEmail(request):
 			request.POST['subject'],
 			template,
 			settings.EMAIL_HOST_USER,
-			['fauzanpartager@gmail.com']
+			['portfolio.triefauzan@gmail.com']
 			)
 
 		email.fail_silently=False
