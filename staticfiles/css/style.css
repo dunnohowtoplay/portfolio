@@ -6,8 +6,15 @@ html, body{
 
 body *{
     transition: 0.3s;
-    
-    
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 500;
+}
+
+p, li, span, label, input, textarea{
+	font-family: 'Nunito', monospace;
 }
 
 
@@ -215,7 +222,7 @@ hr{
     width: 100%;
     box-sizing: border-box;
     margin: 16px 0;
-    border: 1px solid crimson;
+    border: 1px solid rgba(0,0,0,.1);
     background: #fff;
     padding: 20px 40px;
     outline: none;
@@ -224,7 +231,7 @@ hr{
 }
   
 .contact-form-text:focus{
-    box-shadow: 0 0 10px 4px crimson;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,.1);
 }
 
 textarea.contact-form-text{
@@ -236,8 +243,8 @@ textarea.contact-form-text{
     float: right;
     border: 0;
     background: #fff;
-    border:1px solid crimson;
-    color: crimson;
+    border:1px solid rgba(0,0,0,.1);
+    color: #888;
     padding: 12px 50px;
     border-radius: 20px;
     cursor: pointer;
@@ -245,15 +252,11 @@ textarea.contact-form-text{
 }
   
 .contact-form-btn:hover{
-    background-color:crimson;
+    background-color:#888;
     color:#fff;
 }
 
 @media only screen and (max-width: 650px) {
-    .main-container {
-        grid-template-columns: 100%;
-        
-    }
     .box1{
         grid-template-columns: 100%;
         grid-template-rows: 30% 70%;
@@ -262,10 +265,14 @@ textarea.contact-form-text{
                 'content'
         ;
     }
-
+    .photo{
+        justify-self: center;
+        margin-right: 0;
+    }
     .hdr-content{
         padding-left: 0;
         padding-top: 50px;
+        justify-self: center;
     }
 
     .project{
