@@ -33,7 +33,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['triefauzan.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','triefauzan.herokuapp.com',]
 
 
 # Application definition
@@ -56,9 +56,8 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -151,7 +150,7 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 AWS_QUERYSTRING_AUTH = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
